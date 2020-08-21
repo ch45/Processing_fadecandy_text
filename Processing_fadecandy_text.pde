@@ -43,9 +43,9 @@ void setup()
     }
   }
 
-  for (String fName : PFont.list()) { println(fName); };
+  // for (String fName : PFont.list()) { println(fName); };
   // Create the font
-  f = createFont("Lato Bold", spacing * (ledsDown + 0.50)); // Futura
+  f = createFont("MS Reference Sans Serif", spacing * (ledsDown + 0.50)); // Futura
   textFont(f);
 }
 
@@ -73,12 +73,11 @@ void draw()
   int hue = (int) (((float)hueExtent / (rotateSecs * 1000) * millis()) % hueExtent);
   fill(hue, 80, 100);
 
-  // fill(190, 50, 255);
   scrollMessageTop("abcde fghij klmno pqrst uvwxyz", 0.18);
   scrollMessageBot("ABCDE FGHIJ KLMNO PQRST UVWXYZ 0123456789 £$%^&*#@?<>", 0.06);
 
 // On Ras Pi comment out, as for Processing 3.5.3 gives:
 // RuntimeException: Cannot link shader program:
 // ERROR:OPTIMIZER-3 (fragment shader, line 52) Support for for loops is restricted : right side of condition expression must be constant
-//  filter(blur); 
+  filter(blur); 
 }
